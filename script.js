@@ -29,3 +29,22 @@ const quotes = [
         author: " Tyne Daly"
     }
 ];
+
+const buttonHTML = document.querySelector("#generate-quote");
+const quoteHTML = document.querySelector(".quote--text");
+const authorHTML = document.querySelector(".quote--author");
+
+// la fundcion deveria darnos una cita cada vez que pulsamos el boton
+function quoteGenerator() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    
+    const quote = quotes[randomIndex].quote;
+    const author = quotes[randomIndex].author;
+
+    // habría que modificar el texto de quoteHTML y authorHTML
+    quoteHTML.textContent = quote;
+    authorHTML.textContent = author;
+}
+// esto tiene que ocurrir cuando hacemos "click" en button
+// addEventListener("que quieres que escuche?", que quieres que haga?)
+buttonHTML.addEventListener("click", quoteGenerator)
